@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
+    
+    <script src="./jquery-3.7.1.min.js"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-image: url("./picture/ojprG.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: 'Noto Sans TC', sans-serif;
+            
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            /* background-color: rgb(96, 148, 148); */
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: flex-start;
+        }
+
+        .flex-1 {
+            /* background-color: rgb(227, 170, 170); */
+            text-align: center;
+            margin: 0 auto;
+            animation: demo 2s linear 0s infinite;
+        }
+
+        @keyframes demo {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .flex-2 {
+            text-align: left;
+            /* background-color: aqua; */
+            width: 70%;
+            height: 50px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .flex-3 {
+            /* background-color: rgba(82, 111, 137, 0.3); */
+            width: 65%;
+            height: 100px;
+            font-size: 30px;
+            font-weight: bold;
+            border-radius: 40px;
+            /* padding: 50px; */
+            margin: 0px 0px 40px 0px;
+            line-height: 50px;
+        }
+
+        .flex-4 {
+            text-align: center;
+            background-color: rgba(82, 111, 137, 0.4);
+            width: 65%;
+            height: 80px;
+            font-size: 30px;
+            font-weight: bold;
+            border: 4px dashed rgb(7, 33, 54);
+            border-radius: 40px;
+            padding: 0px 10px 60px 10px;
+            line-height: 45px;
+            color: #312f2f;
+        }
+
+        .flex-5 {
+            background-color: rgba(82, 111, 137, 0.4);
+            width: 65%;
+            height: 450px;
+            font-size: 30px;
+            font-weight: bold;
+            border: 4px dashed rgb(7, 33, 54);
+            border-radius: 40px;
+            padding: 0px 10px 0px 10px;
+            /* margin: 100px; */
+            line-height: 50px;
+            color: #312f2f;
+        }
+        .flex-6 {
+            /* background-color: #b0b0d491; */
+            width: 100%;
+            font-size: 22px;
+            text-align: center;
+
+            color: rgba(255, 0, 0, 0.684);
+        }
+        
+        .bag,
+        .bird,
+        .snake,
+        .monkey {
+            width: 15%;
+            /* background-color: #e1e7c0; */
+            margin: 10px;
+            justify-content: center;
+            align-items: center;
+            color: #526E89;
+            font-size: 2rem;
+            padding: 10px;
+
+        }
+
+        :is(.bag, .bird, .snake, .monkey) img {
+            width: 120px;
+            height: 120px;
+        }
+
+        .bag-1,
+        .bird-1,
+        .snake-1,
+        .monkey-1 {
+            width: 15%;
+            /* background-color: #e1e7c0; */
+            margin: 10px;
+            justify-content: center;
+            align-items: center;
+            color: #526E89;
+            padding: 10px;
+        }
+
+        :is(.bag-1, .bird-1, .snake-1, .monkey-1) select {
+            background-color: #526E89;
+            width: 80%;
+            text-align: center;
+            opacity: 0.8;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .bag-2,
+        .bird-2,
+        .snake-2,
+        .monkey-2 {
+            width: 15%;
+            /* background-color: #e1e7c0; */
+            margin: 10px;
+            justify-content: center;
+            align-items: center;
+            color: #526E89;
+            font-size: 2rem;
+            padding: 10px;
+        }
+        .bag-3,
+        .bird-3,
+        .snake-3,
+        .monkey-3 {
+            width: 500px;
+            justify-content: center;
+            align-items: center;
+            /* text-align: center; */
+            background-color: rgba(82, 111, 137, 0.5);
+            font-size: 20px;
+            
+            border: 2px dashed rgb(7, 33, 54);
+            border-radius: 10px;
+            margin: 5px;
+            padding: 0px 5px 0px 5px;
+            line-height: 40px;
+        }
+
+
+        :is(.bag-2, .bird-2, .snake-2, .monkey-2) input,
+        label {
+            /* background-color: #526E89; */
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .b1 {
+            width: 200px;
+            background-color: brown;
+            text-align: center;
+        }
+
+        #radio input:checked+.button {
+            background: #526E89;
+            color: #fff;
+
+        }
+
+        #radio input[type="radio"] {
+            display: none;
+        }
+
+        #radio .button {
+            display: inline-block;
+            margin: 0 5px 10px 0;
+            padding: 5px 10px;
+            background: rgba(255, 255, 255, 0.7);
+            color: #333;
+            cursor: pointer;
+
+        }
+
+        #radio .button:hover {
+            background: #a9a9a9;
+            color: #fff;
+            font-size: 36px;
+        }
+
+        #radio .round {
+            border-radius: 10px;
+
+        }
+
+        select {
+            /* 下拉選單美化 */
+            border-radius: 4px;
+            box-shadow: rgba(0, 0, 0, 0.1);
+            appearance: none;
+        }
+
+        .button2 {
+            width: 8%;
+            /* background-color: #e1e7c0; */
+            /* margin: 10px; */
+            justify-content: center;
+            align-items: center;
+            /* font-size: 2rem; */
+            /* padding: 10px;     */
+        }
+
+        button a {
+            color: inherit;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        #count,
+        #count2,
+        #count3 {
+            display: inline-block;
+            margin: 6px;
+            white-space: nowrap;
+            border: 4px solid #1d1d59;
+            letter-spacing: 2px;
+            border-radius: 40px;
+            padding: 5px;
+            font-weight: bold;
+            font-size: 28px;
+            background-color: #416994;
+            color: rgb(255, 255, 255);
+
+        }
+
+        #totalAnswer li {
+            opacity: 0;
+            transition: opacity 0.8s;
+        }
+
+        #test {
+            /* background-color: #000000; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #count3 {
+            position: relative;
+            left: 600px;
+            bottom: 60px;
+        }
+        .demo2 {
+            display: inline-block;
+            animation: demo2 0.8s ease-in-out infinite;
+        }
+
+        @keyframes demo2 {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+            
+        }
+    </style>
+
+</head>
+
+<body class="main">
+    <div class="flex-container">
+        <div class="flex-1"><img src="./picture/隱 藏 性 格 心 理 測 驗(咖啡色字體).png"></div>
+    </div>
+
+    <div class="flex-container">
+        <div class="flex-2">Story situation: ...</div>
+    </div>
+
+    <div class="flex-container">
+        <div class="flex-3">
+            <span>請你閉上雙眼想像一下，現在你要過一條河名為人生的河，身邊有一個背包(附有一綑繩子)、一隻小鳥、一條蛇及一隻猩猩，
+                你會用甚麼樣的方式帶走這4樣東西過河跟這4樣東西在你心中的順位排序呢?</span>
+        </div>
+    </div>
+
+    <div class="flex-container">
+        <div class="bag"><img src="./picture/背包.png"></div>
+        <div class="bird"><img src="./picture/鳥.png"></div>
+        <div class="snake"><img src="./picture/蛇.png"></div>
+        <div class="monkey"><img src="./picture/猩猩.png"></div>
+    </div>
+
+    <div class="flex-container">
+        <div class="bag-1">
+            <select name="bagvalue" id="bagvalue">
+                <option value="0">順位</option>
+                <option value="1">第一順位</option>
+                <option value="2">第二順位</option>
+                <option value="3">第三順位</option>
+                <option value="4">第四順位</option>
+            </select>
+        </div>
+        <div class="bird-1">
+            <select name="birdvalue" id="birdvalue">
+                <option value="0">順位</option>
+                <option value="1">第一順位</option>
+                <option value="2">第二順位</option>
+                <option value="3">第三順位</option>
+                <option value="4">第四順位</option>
+            </select>
+        </div>
+        <div class="snake-1">
+            <select name="snakevalue" id="snakevalue">
+                <option value="0">順位</option>
+                <option value="1">第一順位</option>
+                <option value="2">第二順位</option>
+                <option value="3">第三順位</option>
+                <option value="4">第四順位</option>
+            </select>
+        </div>
+        <div class="monkey-1">
+            <select name="monkeyvalue" id="monkeyvalue">
+                <option value="0">順位</option>
+                <option value="1">第一順位</option>
+                <option value="2">第二順位</option>
+                <option value="3">第三順位</option>
+                <option value="4">第四順位</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="flex-container">
+        <div id="radio" class="bag-2">
+            <label for="bag1">
+                <input id="bag1" type="radio" name="bag" checked="checked">
+                <p class="round button">丟掉</p>
+            </label>
+            <br>
+            <label for="bag2">
+                <input id="bag2" type="radio" name="bag" checked="checked">
+                <p class="round button">自己背著</p>
+            </label>
+            <br>
+            <label for="bag3">
+                <input id="bag3" type="radio" name="bag" checked="checked">
+                <p class="round button">讓猩猩背著</p>
+            </label>
+
+        </div>
+
+        <div id="radio" class="bird-2">
+            <label for="bird1">
+                <input type="radio" name="bird" id="bird1" checked="checked">
+                <p class="round button">丟掉</p>
+            </label><br>
+            <label for="bird2">
+                <input type="radio" name="bird" id="bird2" checked="checked">
+                <p class="round button">手捧著</p>
+            </label><br>
+            <label for="bird3">
+                <input type="radio" name="bird" id="bird3" checked="checked">
+                <p class="round button">放入背包</p>
+            </label><br>
+            <label for="bird4">
+                <input type="radio" name="bird" id="bird4" checked="checked">
+                <p class="round button">繩子牽著</p>
+            </label><br>
+            <label for="bird5">
+                <input type="radio" name="bird" id="bird5" checked="checked">
+                <p class="round button">讓牠自己飛</p>
+            </label><br>
+        </div>
+
+        <div id="radio" class="snake-2">
+            <label for="snake1">
+                <input type="radio" name="snake" id="snake1" checked="checked">
+                <p class="round button">丟掉</p>
+            </label><br>
+            <label for="snake2">
+                <input type="radio" name="snake" id="snake2" checked="checked">
+                <p class="round button">手拿著</p>
+            </label><br>
+            <label for="snake3">
+                <input type="radio" name="snake" id="snake3" checked="checked">
+                <p class="round button">放入背包</p>
+            </label><br>
+            <label for="snake4">
+                <input type="radio" name="snake" id="snake4" checked="checked">
+                <p class="round button">讓牠自己走</p>
+            </label><br>
+            <!-- <label for="snake5">
+                <input type="radio" name="snake" id="snake5" checked="checked">
+                <p class="round button">繩牽著猩猩</p>
+            </label><br> -->
+        </div>
+
+        <div id="radio" class="monkey-2">
+            <label for="monkey1">
+                <input type="radio" name="monkey" id="monkey1" checked="checked">
+                <p class="round button">丟掉</p>
+            </label><br>
+            <label for="monkey2">
+                <input type="radio" name="monkey" id="monkey2" checked="checked">
+                <p class="round button">手牽著</p>
+            </label><br>
+            <label for="monkey3">
+                <input type="radio" name="monkey" id="monkey3" checked="checked">
+                <p class="round button">放入背包</p>
+            </label><br>
+            <label for="monkey4">
+                <input type="radio" name="monkey" id="monkey4" checked="checked">
+                <p class="round button">繩子牽著</p>
+            </label><br>
+            <label for="monkey5">
+                <input type="radio" name="monkey" id="monkey5" checked="checked">
+                <p class="round button">讓牠自己走</p>
+            </label><br>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="flex-container">
+        <div class="button2">
+            <button type="button" id="count" style=" cursor: pointer;">送出</button>
+        </div>
+        <br><br>
+        <div class="button2">
+            <button type="button" id="count2"><a href="#return2">給我解析</a></button>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br>
+
+    <div class="flex-container">
+        <div id="return2" class="flex-2">Your Answer :</div>
+    </div>
+    <div class="flex-container">
+        <div class="flex-4">
+            <p id="yourAnswer"></p>
+        </div>
+    </div>
+
+    <div class="flex-container" style="display: none;">
+        <em id="totalbagv"></em><em id="totalbagt"></em><em id="totalbago"></em>
+        <em id="totalbirdv"></em><em id="totalbirdt"></em><em id="totalbirdo"></em>
+        <em id="totalsnakev"></em><em id="totalsnaket"></em><em id="totalsnakeo"></em>
+        <em id="totalmonkeyv"></em><em id="totalmonkeyt"></em><em id="totalmonkeyo"></em>
+    </div>
+
+    <div class="flex-container">
+        <div id="return1" class="flex-2">性&nbsp;格&nbsp;解&nbsp;析&nbsp;:</div>
+    </div>
+
+    <div class="flex-container">
+        <div class="flex-5">
+            <ul id="totalAnswer">
+                <li id="bagAnswer">背包的解析</li>
+                <li id="birdAnswer">鳥的解析</li>
+                <li id="snakeAnswer">蛇的解析</li>
+                <li id="monkeyAnswer">猩猩的解析</li>
+            </ul>
+        </div>
+    </div>
+    <div id="test"><button id="count3"><a href="#">重新測驗</a></button></div>
+    <!-- <br><br><br> -->
+    <div class="flex-container">
+        <p style="font-size: 36px;">➤&emsp;➤&emsp;➤&emsp;根據不同的順位排序，又可以反映潛藏性格的程度&nbsp;⋯&nbsp;⋯&nbsp;⋯</p>
+    </div>
+    <div class="flex-container">
+        <div class="bag-3">
+            <details>
+                <summary style="font-size: 23px; text-align: center;">背包</summary>
+                <small style="color: #101928;">證明你是個<mark style="background-color: #97d9ed;">責任感</mark>很強的人，在團體中時常扮演著<mark style="background-color: #97d9ed;">領導者</mark>的角色，
+                你喜歡照顧所有人，這樣會讓你感到很有<mark style="background-color: #97d9ed;">榮譽感</mark>，但有時會顯得太中央空調了，
+                反而沒人感謝你的付出，還搞得自己分身乏術、心力交瘁，建議你還是先把自己照顧好，
+                有多餘心力再分給身邊重要的人就好囉！</small>
+            </details>
+        </div>
+        <div class="bird-3">
+            <details>
+                <summary style="font-size: 23px; text-align: center;">小鳥</summary>
+                <small style="color: #101928;">證明你是位<mark style="background-color: #97d9ed;">對子女很寵愛的人</mark>，你對家庭尤其子女有很大的憧憬，
+                希望自己能陪伴子女長大，不單單只是父親/母親的角色，更希望能
+                作為<mark style="background-color: #97d9ed;">朋友及玩伴</mark>，建議你可以多吸取育兒方面的知識，你一定會是很
+                成功的爸爸/媽媽的。</small>
+            </details>
+        </div>
+        <div class="snake-3">
+            <details>
+                <summary style="font-size: 23px; text-align: center;">蛇</summary>
+                <small style="color: #101928;">證明你最看重的是金錢，也有可能你是個很揮霍的人。在你的價值觀
+                中認為<mark style="background-color: #97d9ed;">金錢是最重要的東西</mark>，你非常可能為了能滿足自身需求而努力
+                賺錢，卻<mark style="background-color: #97d9ed;">忽略了健康</mark>，建議你要多多照顧自己身體，留意身體發出的
+                警訊。</small>
+            </details>
+        </div>
+        <div class="monkey-3">
+            <details>
+                <summary style="font-size: 23px; text-align: center;">猩猩</summary>
+                <small style="color: #101928;">證明你<mark style="background-color: #97d9ed;">是個需要陪伴的人</mark>，比起朋友你更喜歡情人，你<mark style="background-color: #97d9ed;">不能忍受單身</mark>
+                的時間太久，所以總是太快進入下一段感情，也時常發生遇到不適合
+                的對象，這都是因為不夠認識對方，建議你<mark style="background-color: #97d9ed;">看待感情要小心</mark>，才不會
+                一股腦地跳進陷阱！</small>
+            </details>
+        </div>
+    </div>
+    <br><br>
+    <div class="flex-container">
+        <div class="flex-6">
+            <span class="demo2" style="color: yellow;">⚠️</span>
+            <span class="demo2">貼</span>
+            <span class="demo2">心</span>
+            <span class="demo2">提</span>
+            <span class="demo2">醒</span>
+            <span class="demo2"></span>
+            <span class="demo2">只</span>
+            <span class="demo2">是</span>
+            <span class="demo2">一</span>
+            <span class="demo2">個</span>
+            <span class="demo2">測</span>
+            <span class="demo2">驗</span>
+            <span class="demo2">，</span>
+            <span class="demo2">答</span>
+            <span class="demo2">案</span>
+            <span class="demo2">都</span>
+            <span class="demo2">是</span>
+            <span class="demo2">僅</span>
+            <span class="demo2">供</span>
+            <span class="demo2">參</span>
+            <span class="demo2">考</span>
+            <span class="demo2">，</span>
+            <span class="demo2">不</span>
+            <span class="demo2">必</span>
+            <span class="demo2">過</span>
+            <span class="demo2">度</span>
+            <span class="demo2">走</span>
+            <span class="demo2">心</span>
+            <span class="demo2" style="color: yellow;">⚠️</span>
+            <!-- <span class="demo2">。</span> -->
+            <!-- <span class="demo2"></span> -->
+            <!-- <p><mark>但請注意這只是一個測驗，單一測驗永遠無法完整描述一個人。</mark></p> -->
+        </div>
+        <br><br><br><br><br><br>
+    </div>
+    <script>
+        
+        $("#count").on("click", function () {
+            var bagValueRes = $("select[name='bagvalue']").val();
+            document.getElementById("totalbagv").textContent = bagValueRes;    //背包值結果
+            console.log(bagValueRes);
+
+            var x = document.getElementById("bagvalue");
+            var bagOrderRes = x.options[x.selectedIndex].text;
+            document.getElementById("totalbagt").textContent = bagOrderRes;    //背包順位結果
+            console.log(bagOrderRes);
+
+            var bagSelectedRadio = document.querySelector('input[name="bag"]:checked');
+            var bagSelectLabel = document.querySelector('label[for="' + bagSelectedRadio.id + '"]').innerText;
+            document.getElementById("totalbago").textContent = bagSelectLabel;    //背包選項結果
+            console.log(bagSelectLabel);
+            // 
+            var birdValueRes = $("select[name='birdvalue']").val();
+            document.getElementById("totalbirdv").textContent = birdValueRes;    //鳥值結果
+            console.log(birdValueRes);
+
+            var y = document.getElementById("birdvalue");
+            var birdOrderRes = y.options[y.selectedIndex].text;
+            document.getElementById("totalbirdt").textContent = birdOrderRes;    //鳥順位結果
+            console.log(birdOrderRes);
+
+            var birdSelectedRadio = document.querySelector('input[name="bird"]:checked');
+            var birdSelectLabel = document.querySelector('label[for="' + birdSelectedRadio.id + '"]').innerText;
+            document.getElementById("totalbirdo").textContent = birdSelectLabel;    //鳥選項結果
+            console.log(birdSelectLabel);
+            //
+            var snake = $("select[name='snakevalue']").val();
+            document.getElementById("totalsnakev").textContent = snake;    //蛇值結果
+            console.log(snake);
+
+            var z = document.getElementById("snakevalue");
+            var snakeOrderRes = z.options[z.selectedIndex].text;
+            document.getElementById("totalsnaket").textContent = snakeOrderRes;    //蛇順位結果
+            console.log(snakeOrderRes);
+
+            var snakeSelectedRadio = document.querySelector('input[name="snake"]:checked');
+            var snakeSelectLabel = document.querySelector('label[for="' + snakeSelectedRadio.id + '"]').innerText;
+            document.getElementById("totalsnakeo").textContent = snakeSelectLabel;    //蛇選項結果
+            console.log(snakeSelectLabel);
+            //
+            var monkey = $("select[name='monkeyvalue']").val();
+            document.getElementById("totalmonkeyv").textContent = monkey;    //猩猩值結果
+            console.log(monkey);
+
+            var s = document.getElementById("monkeyvalue");
+            var monkeyOrderRes = s.options[s.selectedIndex].text;
+            document.getElementById("totalmonkeyt").textContent = monkeyOrderRes;    //猩猩順位結果
+            console.log(monkeyOrderRes);
+
+            var monkeySelectedRadio = document.querySelector('input[name="monkey"]:checked');
+            var monkeySelectLabel = document.querySelector('label[for="' + monkeySelectedRadio.id + '"]').innerText;
+            document.getElementById("totalmonkeyo").textContent = monkeySelectLabel;    //猩猩選項結果
+            console.log(monkeySelectLabel);
+            //
+            //你的答案串接
+            document.getElementById("yourAnswer").innerHTML =
+            `背包 : <ins>${bagSelectLabel}</ins> 、 鳥 : <ins>${birdSelectLabel}</ins><br>
+            蛇 : <ins>${snakeSelectLabel}</ins> 、 猩猩 : <ins>${monkeySelectLabel}</ins>`
+        });
+
+
+
+        $("#count2").on("click", function () {   //各個評析
+            //背包的評析
+            var totalbago = document.getElementById("totalbago").innerText
+            if (totalbago === "丟掉") {
+                document.getElementById("bagAnswer").innerText = "背包象徵責任，當你把背包丟棄，表示你是一個比較沒有責任感的傢伙，無論是做人處事、或是家庭責任在你心中或許不是那麼重要呢!"
+            } else if (totalbago === "自己背著") {
+                document.getElementById("bagAnswer").innerText = "背包象徵責任，不論你是肩背著或是手提著，表示你是一個責任感很強的人、不怕負責，發生什麼事你都能一肩扛起，讓人相當可信。"
+            } else if (totalbago === "讓猩猩背著") {
+                document.getElementById("bagAnswer").innerText = "背包象徵責任，如若將包包給猩猩背著，代表你會把責任交給另一半扛。"
+            } else {
+                document.getElementById("bagAnswer").innerText = "請確認答案!"
+            }
+            //鳥的評析
+            var totalbirdo = document.getElementById("totalbirdo").innerText
+            if (totalbirdo === "丟掉") {
+                document.getElementById("birdAnswer").innerText = "小鳥代表著子女，從你的選項來看，意謂著子女的教育、成長過程對你而言不是那麼重要，真是個壞傢伙呢!"
+            } else if (totalbirdo === "手捧著") {
+                document.getElementById("birdAnswer").innerText = "小鳥代表著子女，從你的選項來看，意謂著你會對子女無微不至的照顧、呵護，隻手為子女撐起一片天。"
+            } else if (totalbirdo === "放入背包") {
+                document.getElementById("birdAnswer").innerText = "小鳥代表著子女，你將小鳥放入背包，意謂著你會背起養育孩子的責任，隻手為子女撐起一片天。"
+            } else if (totalbirdo === "繩子牽著") {
+                document.getElementById("birdAnswer").innerText = "小鳥代表著子女，從你的選項來看，意謂著你會花很多錢投資在子女身上或是用金錢控制，讓子女的一切都會在你的掌握。"
+            } else if (totalbirdo === "讓牠自己飛") {
+                document.getElementById("birdAnswer").innerText = "小鳥代表著子女，從你的選項來看，意謂著你對子女是採取比較自由的方式教養，任其大展拳腳，不受拘束的成長。"
+            } else {
+                document.getElementById("birdAnswer").innerText = "請確認答案!"
+            }
+            //蛇的評析    
+            var totalsnakeo = document.getElementById("totalsnakeo").innerText
+            if (totalsnakeo === "丟掉") {
+                document.getElementById("snakeAnswer").innerText = "蛇意謂著金錢，代表金錢對你來說不大重要，乃身外之物，反映為人揮霍、花錢如流水。"
+            } else if (totalsnakeo === "手拿著") {
+                document.getElementById("snakeAnswer").innerText = "蛇意謂著金錢，將蛇拿在手中，表示你很會管理金錢，同時對於金錢的掌握度很高。"
+            } else if (totalsnakeo === "放入背包") {
+                document.getElementById("snakeAnswer").innerText = "蛇意謂著金錢，將蛇放入背包，表示你把金錢看得很重要，不會常常花太多錢。"
+            } else if (totalsnakeo === "讓牠自己走") {
+                document.getElementById("snakeAnswer").innerText = "蛇意謂著金錢，在你的價值觀中認為金錢並非人生最重要的東西，因為你深信錢沒了再賺就有。"
+                // } else if (totalsnakeo === "繩牽著猩猩") {
+                //     document.getElementById("snakeAnswer").innerText = "猩猩象徵伴侶、蛇意謂著金錢，從你的選項來看，表示你有一點大男人主義，與另一半的關係帶有點主僕的意味，又或是想用金錢將對方綁得死死"
+            } else {
+                document.getElementById("snakeAnswer").innerText = "請確認答案!"
+            }
+            //猩猩的評析    
+            var totalmonkeyo = document.getElementById("totalmonkeyo").innerText
+            if (totalmonkeyo === "丟掉") {
+                document.getElementById("monkeyAnswer").innerText = "猩猩象徵伴侶，這意味著你較不願意信任對方可以為你遮風擋雨，同時在你心目中不是那麼重要，可以說丟就丟的那種。"
+            } else if (totalmonkeyo === "手牽著") {
+                document.getElementById("monkeyAnswer").innerText = "猩猩象徵伴侶，這意味著你和另一半是平等的關係，是朋友也是情人更是夥伴，面對未來你們會互相扶持。"
+            } else if (totalmonkeyo === "放入背包") {
+                document.getElementById("monkeyAnswer").innerText = "猩猩象徵伴侶，表示你很樂意將另一半背在身上，也很會照顧另一半，惜命命的那種。"
+            } else if (totalmonkeyo === "繩子牽著") {
+                document.getElementById("monkeyAnswer").innerText = "猩猩象徵伴侶，代表你很享受在一段親密關係中，偷偷的觀察伴侶的一舉一動,並給予保護。"
+            } else if (totalmonkeyo === "讓牠自己走") {
+                document.getElementById("monkeyAnswer").innerText = "猩猩象徵伴侶，表示你很信任另一半，彼此的關係是平等自由的，互不約束，給予伴侶充分的私人空間。"
+            } else {
+                document.getElementById("monkeyAnswer").innerText = "請確認答案!"
+            }
+
+
+            function showLines(id, speed) {
+                var xxx = document.getElementById(id);
+                var yyy = xxx.getElementsByTagName("li");
+                let index = 0;
+
+
+
+                function showNextLine() {
+                    if (index < yyy.length) {
+                        yyy[index].style.opacity = 1;
+                        index++;
+                        setTimeout(showNextLine, speed);
+                    }
+                }
+                showNextLine();
+            }
+
+            setTimeout(function () {
+                showLines("totalAnswer", 3000);
+            }, 1000);
+            // 讓 showLines("totalAnswer", 1500) 3秒後在執行
+
+
+        });
+
+        $("#count3").on("click", function () {
+            document.getElementById("bagAnswer").style.opacity = 0;
+            document.getElementById("birdAnswer").style.opacity = 0;
+            document.getElementById("snakeAnswer").style.opacity = 0;
+            document.getElementById("monkeyAnswer").style.opacity = 0;
+
+        });
+
+    </script>
+
+</body>
+
+</html>
